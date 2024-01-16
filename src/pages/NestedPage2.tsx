@@ -8,20 +8,21 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import './Home.css';
+import { useHistory } from 'react-router';
 
-const Home: React.FC = () => {
+const NestedPage2: React.FC = () => {
+  const his = useHistory();
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>Nested Page 2</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonList>
-          <IonItem routerLink="/nested/page1">
-            <IonLabel>Go to Nested Page1</IonLabel>
+          <IonItem onClick={() => his.goBack()}>
+            <IonLabel>Return Page 1</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>
@@ -29,4 +30,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default NestedPage2;
